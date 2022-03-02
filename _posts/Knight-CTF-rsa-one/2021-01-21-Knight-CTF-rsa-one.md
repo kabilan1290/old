@@ -2,24 +2,24 @@
 layout: post
 title:  "Knight CTF -RSA one!"
 date:   2022-01-21 09:29:20 +0700
-categories: bugbounty
+categories: ctf
 ---
 
-<img src ="https://raw.githubusercontent.com/kabilan1290/crypto/main/challenge/knightCTF/RSA-one/RSA2.png"></img>
-- In this Challenge we were given with two file flag.enc and private.pem.
+<img src ="https://raw.githubusercontent.com/kabilan1290/crypto/main/challenge/knightCTF/RSA-one/RSA2.png">
+In this Challenge we were given with two file flag.enc and private.pem.
 
-- Challenge Description says
+Challenge Description says
  `Our security agency has got hold of a ciphertext and a key. Well..the key got corrupted and the lost character is represented by a x. Can you decipher the message for us?`
 
-- Viewing the private.pem file,we can notice a emoji is replaced in the place of a letter,which would make the private key invalid.
+Viewing the private.pem file,we can notice a emoji is replaced in the place of a letter,which would make the private key invalid.
 
-<img src="https://raw.githubusercontent.com/kabilan1290/crypto/main/challenge/knightCTF/RSA-one/rsa1.png"></img>
+<img src="https://raw.githubusercontent.com/kabilan1290/crypto/main/challenge/knightCTF/RSA-one/rsa1.png">
 
-- We can brutefoce all possible lowercase+uppercase alphabets and for each iteration decrypt the flag.enc.
+We can brutefoce all possible lowercase+uppercase alphabets and for each iteration decrypt the flag.enc.
 
-- Print the flag if we got a hit on the string which matches `KCTF`
+Print the flag if we got a hit on the string which matches `KCTF`
 
-- Below is the Exploit script.
+Below is the Exploit script.
 
 ```
 from Crypto.Util.number import long_to_bytes
@@ -74,6 +74,7 @@ for i in range(0,length):
 #Flag KCTF{M4Y_TH3_8RUT3F0rc3_B3_W1TH_Y0U}
 ```
 
+<br>
 
 
 - Flag : KCTF{M4Y_TH3_8RUT3F0rc3_B3_W1TH_Y0U}
