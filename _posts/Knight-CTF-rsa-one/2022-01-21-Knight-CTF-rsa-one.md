@@ -5,7 +5,7 @@ date:   2021-07-14 09:29:20 +0700
 categories: bugbounty
 ---
 
-<img src ="https://raw.githubusercontent.com/kabilan1290/crypto/main/challenge/knightCTF/RSA-one/RSA2.png"></img>
+<img src ="RSA2.png"></img>
 - In this Challenge we were given with two file flag.enc and private.pem.
 
 - Challenge Description says
@@ -13,7 +13,7 @@ categories: bugbounty
 
 - Viewing the private.pem file,we can notice a emoji is replaced in the place of a letter,which would make the private key invalid.
 
-<img src="https://raw.githubusercontent.com/kabilan1290/crypto/main/challenge/knightCTF/RSA-one/rsa1.png"></img>
+<img src="rsa1.png"></img>
 
 - We can brutefoce all possible lowercase+uppercase alphabets and for each iteration decrypt the flag.enc.
 
