@@ -12,6 +12,7 @@ In this Challenge we were given with two file flag.enc and private.pem.
 Challenge Description says
  `Our security agency has got hold of a ciphertext and a key. Well..the key got corrupted and the lost character is represented by a x. Can you decipher the message for us?`
 <br>
+
 Viewing the private.pem file,we can notice a emoji is replaced in the place of a letter,which would make the private key invalid.
 <br>
 
