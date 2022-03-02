@@ -6,4 +6,4 @@ categories: bugbounty
 ---
 
 
-https://kabilan1290.medium.com/journey-of-my-first-bug-bounty-72175d903ce3
+<a href="https://kabilan1290.medium.com/journey-of-my-first-bug-bounty-72175d903ce3">https://kabilan1290.medium.com/journey-of-my-first-bug-bounty-72175d903ce3</a>
