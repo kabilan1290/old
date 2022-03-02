@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Knight CTF -RSA one!"
-date:   2021-07-14 09:29:20 +0700
+date:   2022-01-21 09:29:20 +0700
 categories: bugbounty
 ---
 
