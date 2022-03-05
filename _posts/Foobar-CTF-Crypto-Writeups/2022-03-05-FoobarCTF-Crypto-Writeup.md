@@ -34,15 +34,12 @@ print(<span class="hljs-string">"x =  {}"</span>.format(x))
 <span class="hljs-attr">x</span> =  <span class="hljs-number">2121556837489323393830117506636485275262970334096973330971400998541061434248491797293936443932014206079161678574395103482971809478068410664024927982076981551873713173206728190862242836376526528390743086543538755826674529105687167529814363908630371800401390496769993532681737968141810119668479989445768189718574035122948285385181466041802061542422715767093719363420978170488364616302423479875250423116981</span>
 </code></pre><ul>
 <li>This is an normal RSA challenge with extra value x = <code>p*q % 2**1337</code>.</li>
-<li>Here n is of <code>p*p*q</code></li>
-<li><p>My solution lies on the below equations.</p>
-</li>
+<li>Here n is of <code>p*p*q</code>,My solution lies on the below equations.</li>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/crypto/main/challenge/foobarCTF/image0.jpg"><img>
+<br></ul>
+<p>- once we retrieved p,we can easily decrypt the flag.</p>
 
-<li><p>once we retrieved p,we can easily decrypt the flag.</p>
-</li>
-</ul>
 <h4 id="script-">Script:</h4>
 <pre><code>from gmpy <span class="hljs-built_in">import</span> *
 from Crypto.Util.number <span class="hljs-built_in">import</span> *
