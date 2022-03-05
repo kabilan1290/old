@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en' class=''>
+
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <meta charset='UTF-8'>
+  <title>IDN</title>
+
+  
+  <style class="inline-sheet">
+
+  </style>
+
+
+
+</head>
+
+<body>
+
+<form onSubmit="event.preventDefault();" role="search">
+  <label for="search">Search for stuff</label>
+  <input id="search" type="search" placeholder="Enter Domain Name"  required />
+  <button type="submit" onClick=test2()>Go</button>    
+</form></div>
+
+
+  <script src="script.js">
+
+</script>
+
+
+  
+</body>
+
+</html>
