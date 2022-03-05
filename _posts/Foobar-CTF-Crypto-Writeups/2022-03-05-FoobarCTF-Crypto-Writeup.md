@@ -35,7 +35,6 @@ print(<span class="hljs-string">"x =  {}"</span>.format(x))
 </code></pre><ul>
 <li>This is an normal RSA challenge with extra value x = <code>p*q % 2**1337</code>.</li>
 <li>Here n is of <code>p*p*q</code></li>
-
 <li><p>My solution lies on the below equations.</p>
 </li>
 
@@ -73,7 +72,9 @@ from Crypto.Util.number <span class="hljs-built_in">import</span> *
 <span class="hljs-attr">d</span> = inverse(e,phi)
 
 print(long_to_bytes(pow(c,d,n)))
-</code></pre><p>Flag : GLUG{ded1cati0n_i5_4_tal3n7_4ll_0n_it5_0wn}</p>
+</code></pre>
+<br>
+<p>Flag : GLUG{ded1cati0n_i5_4_tal3n7_4ll_0n_it5_0wn}</p>
 <hr>
 <h4 id="challenge-name-daredevil-s-server">Challenge name :  Daredevil&#39;s server</h4>
 <h4 id="description-">Description:</h4>
@@ -83,8 +84,7 @@ print(long_to_bytes(pow(c,d,n)))
 <li>We were given with an netcat connection <code>nc chall.nitdgplug.org 30093</code></li>
 <li>Connecting to the server gave us the below options.</li>
 
-<img src="https://raw.githubusercontent.com/kabilan1290/crypto/main/challenge/foobarCTF/Screenshot_2022-03-05_19-50-10.png"></img>
-
+<img src="https://raw.githubusercontent.com/kabilan1290/crypto/main/challenge/foobarCTF/Screenshot_2022-03-05_19-50-10.png">
 <li>I went on with the value E to know the encryption function!</li>
 </ul>
 <h4 id="output-of-encryption-function-">Output of encryption function:</h4>
@@ -193,8 +193,8 @@ sign = a*b*c*d % n
 
 <span class="hljs-built_in">print</span>(<span class="hljs-string">"[+] signature :"</span>+str(hex(sign))[:-1])
 </code></pre>
-
-<img src="https://raw.githubusercontent.com/kabilan1290/crypto/main/challenge/foobarCTF/winning.png"></img>
-
+<br>
+<img src="https://raw.githubusercontent.com/kabilan1290/crypto/main/challenge/foobarCTF/winning.png">
+<br>
 <p>Flag:
 GLUG{fl4g_15_53rv3d_xD_E9644V2GG0}</p>
