@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ZoobarCTF 2022 Crypto writeup"
+title:  "FoobarCTF 2022 Crypto writeup"
 date:   2022-03-05 09:29:20 +0700
 categories: bugbounty
 ---
