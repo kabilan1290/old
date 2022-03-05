@@ -2,7 +2,7 @@
 title: Game0v3r
 permalink: /about/
 layout: page
-excerpt: This is Game0v3r,playing CTF with TamilCTF and i do parttime bugbounty!
+excerpt: This is Game0v3r,playing CTF with TamilCTF and i do Part-time bugbounty!
 comments: false
 ---
 
