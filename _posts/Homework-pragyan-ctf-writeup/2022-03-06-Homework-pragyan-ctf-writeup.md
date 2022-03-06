@@ -10,40 +10,40 @@ categories: ctfwriteup
 
 <img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/Screenshot_2022-03-06_19-33-51.png">
 
-<p>- This is the only misc challenge in pragyan CTF !  I managed to solve this with the help of my teammates from TamilCTF! cheers to everyone.</p>
+<p>• This is the only misc challenge in pragyan CTF !  I managed to solve this with the help of my teammates from TamilCTF! cheers to everyone.</p>
 
-<p>- The challenge gave us an link and the description says something about a traitor submitted home work and we have to find him maybe?lets try!</p>
+<p>• The challenge gave us an link and the description says something about a traitor submitted home work and we have to find him maybe?lets try!</p>
 
-<p>- Visting the link we are presented with the webpage ! hmm nothing interesting.</p>
+<p>• Visting the link we are presented with the webpage ! hmm nothing interesting.</p>
   <br>
 <img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/Screenshot_2022-03-06_19-34-19.png">
   
-<p>- The webpage has the response as `Sorry the portal is not accepting new assignments at this time`</p>
+<p>• The webpage has the response as `Sorry the portal is not accepting new assignments at this time`</p>
   
-<p>- Source code does not have anything interesting too! so going on with directory brutefoce we found an interesting directory named `response`.</p>
+<p>• Source code does not have anything interesting too! so going on with directory brutefoce we found an interesting directory named `response`.</p>
   
-<p>- Upon visiting the endpoint,we get the below response.</p>
+<p>• Upon visiting the endpoint,we get the below response.</p>
   
 <br>
 <img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/Screenshot_2022-03-06_19-34-40.png">
  
-<p>- Voilà ! it seems we found the culprit who submitted the assignment! Its dipensu and we have an option to download his assignment.</p>
+<p>• Voilà ! it seems we found the culprit who submitted the assignment! Its dipensu and we have an option to download his assignment.</p>
   
-<p>- Downloading the assignment gave us an zip file named pieces and inside the zip we can see lot of image files.</p>
+<p>• Downloading the assignment gave us an zip file named pieces and inside the zip we can see lot of image files.</p>
   
 <img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/Screenshot_2022-03-06_19-37-39.png">
   
-<p>- Seems a image was separated into multiple parts and i thought of merging them together btw is it sorted in a order? and there was 90 separate images.</p>
+<p>• Seems a image was separated into multiple parts and i thought of merging them together btw is it sorted in a order? and there was 90 separate images.</p>
   
-<p>- After a initial analysis on the image we were to find there are coordinates on each image metadata !</p>
+<p>• After a initial analysis on the image we were to find there are coordinates on each image metadata !</p>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/coordinate.png">
 
-<p>- The total 90 images contains X coordinate ranges from 1 to 9 and y coordinates ranges from 1 to 10 but the images were not sorted!</p>
+<p>• The total 90 images contains X coordinate ranges from 1 to 9 and y coordinates ranges from 1 to 10 but the images were not sorted!</p>
   
-<p>- We can merge the images but first we need to sort them according to the coordinates and better i decided to change the images name according to the coordinates</p>
+<p>• We can merge the images but first we need to sort them according to the coordinates and better i decided to change the images name according to the coordinates</p>
 
-<p>- I wrote a script to name the images with coordinates and i attached the script below.[Added comments for explanation]</p>
+<p>• I wrote a script to name the images with coordinates and i attached the script below.[Added comments for explanation]</p>
 
 ```
 import os
@@ -66,17 +66,17 @@ for i in a:
     #removing the orginal file
   ```
   
-<p>- With the above script,we get the beautiful output as follows.
+<p>• With the above script,we get the beautiful output as follows.</p>
   
   <img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/sorted.png">
   
-<p>- We got the result and to our plus,our images comes sorted and we can easily merge them with x and y coordinates.
+<p>• We got the result and to our plus,our images comes sorted and we can easily merge them with x and y coordinates.</p>
   
-<p>- Below paperwork explains how to arrange the images!
+<p>• Below paperwork explains how to arrange the images!</p>
   
 <img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/paperwork.jpg">
 
-<p>I used opencv to merge the images and below is the script!</p>
+<p>• I used opencv to merge the images and below is the script!</p>
 
 ```
 import cv2
