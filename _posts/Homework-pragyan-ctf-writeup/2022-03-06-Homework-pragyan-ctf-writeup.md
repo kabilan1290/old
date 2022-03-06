@@ -16,28 +16,28 @@ categories: ctfwriteup
 
 <p>- Visting the link we are presented with the webpage ! hmm nothing interesting.</p>
   <br>
-<img src="https://github.com/kabilan1290/WebCTF/blob/master/pragyan/Screenshot_2022-03-06_19-34-19.png">
+<img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/Screenshot_2022-03-06_19-34-19.png">
   
 <p>- The webpage has the response as `Sorry the portal is not accepting new assignments at this time`</p>
   
 <p>- Source code does not have anything interesting too! so going on with directory brutefoce we found an interesting directory named `response`.</p>
   
-</p>- Upon visiting the endpoint,we get the below response.</p>
+<p>- Upon visiting the endpoint,we get the below response.</p>
   
 <br>
-<img src="https://github.com/kabilan1290/WebCTF/blob/master/pragyan/Screenshot_2022-03-06_19-34-40.png">
+<img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/Screenshot_2022-03-06_19-34-40.png">
  
 <p>- Voilà ! it seems we found the culprit who submitted the assignment! Its dipensu and we have an option to download his assignment.</p>
   
 <p>- Downloading the assignment gave us an zip file named pieces and inside the zip we can see lot of image files.</p>
   
-<img src="https://github.com/kabilan1290/WebCTF/blob/master/pragyan/Screenshot_2022-03-06_19-37-39.png">
+<img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/Screenshot_2022-03-06_19-37-39.png">
   
 <p>- Seems a image was separated into multiple parts and i thought of merging them together btw is it sorted in a order? and there was 90 separate images.</p>
   
 <p>- After a initial analysis on the image we were to find there are coordinates on each image metadata !</p>
 
-<img src="https://github.com/kabilan1290/WebCTF/blob/master/pragyan/coordinate.png">
+<img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/coordinate.png">
 
 <p>- The total 90 images contains X coordinate ranges from 1 to 9 and y coordinates ranges from 1 to 10 but the images were not sorted!</p>
   
@@ -68,7 +68,7 @@ for i in a:
   
 <p>- With the above script,we get the beautiful output as follows.
   
-  <img src="https://github.com/kabilan1290/WebCTF/blob/master/pragyan/sorted.png">
+  <img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/sorted.png">
   
 <p>- We got the result and to our plus,our images comes sorted and we can easily merge them with x and y coordinates.
   
