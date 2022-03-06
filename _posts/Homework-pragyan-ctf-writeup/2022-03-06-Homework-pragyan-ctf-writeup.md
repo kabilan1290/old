@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Homework pragyan ctf writeup"
-date:   2022-03-07 09:29:20 +0700
+date:   2022-03-06 09:29:20 +0700
 categories: ctfwriteup
 ---
 
