@@ -18,9 +18,9 @@ categories: ctfwriteup
   <br>
 <img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/Screenshot_2022-03-06_19-34-19.png">
   
-<p>• The webpage has the response as  <code>Sorry the portal is not accepting new assignments at this time</code></p>
+<p>• The webpage has the response as  "Sorry the portal is not accepting new assignments at this time"</p>
   
-<p>• Source code does not have anything interesting too! so going on with directory brutefoce we found an interesting directory named <code>response</code>.</p>
+<p>• Source code does not have anything interesting too! so going on with directory brutefoce we found an interesting directory named "response".</p>
   
 <p>• Upon visiting the endpoint,we get the below response.</p>
   
