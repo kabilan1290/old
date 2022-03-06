@@ -18,9 +18,9 @@ categories: ctfwriteup
   <br>
 <img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/Screenshot_2022-03-06_19-34-19.png">
   
-<p>• The webpage has the response as `Sorry the portal is not accepting new assignments at this time`</p>
+<p>• The webpage has the response as  <code>Sorry the portal is not accepting new assignments at this time</code></p>
   
-<p>• Source code does not have anything interesting too! so going on with directory brutefoce we found an interesting directory named `response`.</p>
+<p>• Source code does not have anything interesting too! so going on with directory brutefoce we found an interesting directory named <code>response</code>.</p>
   
 <p>• Upon visiting the endpoint,we get the below response.</p>
   
@@ -219,7 +219,7 @@ im_v1 = cv2.vconcat([im_h1,im_h2,im_h3,im_h4,im_h5,im_h6,im_h7,im_h8,im_h9])
 
 cv2.imwrite('output.jpg', im_v1)
 ```
-<p>- Merging them together! we got our flag : D</p>
+<p>• Merging them together! we got our flag : D</p>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/output.jpg">
 
