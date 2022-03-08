@@ -10,7 +10,7 @@ categories: ctfwriteup
 <img src="https://raw.githubusercontent.com/kabilan1290/WebCTF/master/pragyan/Screenshot_2022-03-09_03-08-05.png">
 <p>• BlindScout is a challenge from PragyanCTF and this is the only crypto challenge i was able to solve during the competition :( .</p>
 
-<p>**“Failure is delay, not defeat. It is a temporary detour, not a dead end.” ― Denis Waitley**</p>
+<p><b>“Failure is delay, not defeat. It is a temporary detour, not a dead end.” ― Denis Waitley</b></p>
 
 <p>• Btw our team had the first blood of the challenge and happy about it!</p>
 
