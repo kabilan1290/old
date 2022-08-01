@@ -7,33 +7,33 @@ categories: ctfwriteup
 
 ### Intigriti July xss challenge[Second order SQLI to XSS]
 
-- Hey all it been an really long time since i last posted something !
+<p>• Hey all it been an really long time since i last posted something !</p>
 
-- Thankfully intigriti came up with an xss challenge for the month july and i solved it :D
+<p>• Thankfully intigriti came up with an xss challenge for the month july and i solved it :D</p>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/xsschallenge.png">
 
-- Lets get into the challenge page and the challenge page seemed very blank ( no javascripts , no insertion points) at first thought!
+<p>• Lets get into the challenge page and the challenge page seemed very blank ( no javascripts , no insertion points) at first thought!</p>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/challengepage.png">
 
-- The only dynamic activity happened in the page was fetching blog archives via month parameter.
+<p>• The only dynamic activity happened in the page was fetching blog archives via month parameter.</p>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/dynamic.png">
 
-- Inserting any values or special characters throwed an error page and inserting any incremental numbers 4,5 throwed an blank page.
+<p>• Inserting any values or special characters throwed an error page and inserting any incremental numbers 4,5 throwed an blank page.</p>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/error.png">
 
-- hmmmm! maybe an sqlinjection? tried some logical payloads,Guess what? yesss sql injectionnnnn.
+<p>• hmmmm! maybe an sqlinjection? tried some logical payloads,Guess what? yesss sql injectionnnnn.</p>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/fails.png">
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/loads.png">
 
-- But what we do with sql injection in an xss challenge? ok lets check wether we can dump the database.
+<p>• But what we do with sql injection in an xss challenge? ok lets check wether we can dump the database.</p>
 
-- Going towards the classic sql exploitation!
+<p>• Going towards the classic sql exploitation!</p>
 
 ```
 https://challenge-0722.intigriti.io/challenge/challenge.php?month=3 order by 1,2,3,4,5 -- -
@@ -45,11 +45,11 @@ https://challenge-0722.intigriti.io/challenge/challenge.php?month=3 union select
 Noticed the reflection on 2,3,5 by union select clause
 ```
 
-- Can execute mysql functions,Checked with database(),user(),version() at first! and we are sitting on the 'blog' database.
+<p>• Can execute mysql functions,Checked with database(),user(),version() at first! and we are sitting on the 'blog' database.</p>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/reflect.png">
 
-- Dumping the table names of the database blog;
+<p>• Dumping the table names of the database blog;</p>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/tablename.png">
 
@@ -57,11 +57,11 @@ Noticed the reflection on 2,3,5 by union select clause
 Query used : https://challenge-0722.intigriti.io/challenge/challenge.php?month=1%20union%20select%20null,group_concat(table_name),null,null,group_concat(table_name)%20from%20information_schema.tables%20where%20table_schema=database()--%20-#
 ```
 
-- We came to an understanding there are three tables "post,user,youtube"! Now onto dumping the columns and contents.
+<p>• We came to an understanding there are three tables "post,user,youtube"! Now onto dumping the columns and contents.<p>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/whole.png">
 
-- The above is the structure "database > tables > column"
+<p>• The above is the structure "database > tables > column"</p>
 
 ```
 Queries Used:
@@ -72,15 +72,15 @@ https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select
 https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select null,column_name,null,null,null from information_schema.columns where table_name=0x796f7574756265-- -
 ```
 
-- Note : I hex encoded the values of table name since the query escapes any special characters and throws error.
+<p>• Note : I hex encoded the values of table name since the query escapes any special characters and throws error.</p>
 
-- After spending some time on examining data from each column, nothing been found except i was rickrolled on youtubeid :| 
+<p>• After spending some time on examining data from each column, nothing been found except i was rickrolled on youtubeid :| </p>
 
 <img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/rickroll.png">
 
-- It went on limelight that this challenge has nothing to do with data dump.
+<p>• It went on limelight that this challenge has nothing to do with data dump.</p>
 
-- Then tried to inject my content on the reflected 2,3 and 5th columns.
+<p>• Then tried to inject my content on the reflected 2,3 and 5th columns.</p>
 
 ```
 query used : 
