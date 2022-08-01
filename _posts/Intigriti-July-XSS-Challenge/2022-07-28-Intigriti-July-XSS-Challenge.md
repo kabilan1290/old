@@ -11,19 +11,19 @@ categories: ctfwriteup
 
 - Thankfully intigriti came up with an xss challenge for the month july and i solved it :D
 
-<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/xsschallenge.png"></img>
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/xsschallenge.png">
 
 - Lets get into the challenge page and the challenge page seemed very blank ( no javascripts , no insertion points) at first thought!
 
-<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/challengepage.png"></img>
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/challengepage.png">
 
 - The only dynamic activity happened in the page was fetching blog archives via month parameter.
 
-<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/dynamic.png"></img>
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/dynamic.png">
 
 - Inserting any values or special characters throwed an error page and inserting any incremental numbers 4,5 throwed an blank page.
 
-<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/error.png"></img> 
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/error.png">
 
 - hmmmm! maybe an sqlinjection? tried some logical payloads,Guess what? yesss sql injectionnnnn.
 
