@@ -76,7 +76,7 @@ https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select
 
 <p>• After spending some time on examining data from each column, nothing been found except i was rickrolled on youtubeid :| </p>
 
-<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/rickroll.png">
+<img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/rickroll.png">
 
 <p>• It went on limelight that this challenge has nothing to do with data dump.</p>
 
