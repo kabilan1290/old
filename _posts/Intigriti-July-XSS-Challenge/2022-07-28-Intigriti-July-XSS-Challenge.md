@@ -61,7 +61,7 @@ Query used : https://challenge-0722.intigriti.io/challenge/challenge.php?month=1
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/whole.png">
 
-<p>• The above is the structure "database > tables > column"</p>
+<p>• The above is the structure database > tables > column </p>
 
 ```
 Queries Used:
@@ -98,6 +98,8 @@ https://challenge-0722.intigriti.io/challenge/challenge.php?month=3 union select
 <p>• Then i came across this lovely rendition,the author name which was never rendered in any of the reflection(output by our sqlinjection query) magically came up when i tried some fuzzing with integers( ah i completely forgot to notice this ;} the author name) </p>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/kanom.png">
+
+<br>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/iruku.png">
 
