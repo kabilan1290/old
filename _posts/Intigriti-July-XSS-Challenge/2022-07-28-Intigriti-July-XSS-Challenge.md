@@ -168,7 +168,7 @@ https://challenge-0722.intigriti.io/challenge/challenge.php?month=3 union select
 
 <p>• I was at dead end ,nothing seemed to work for a long time.</p>
 <p>• I tried googling random things about sql injection and blogs( Some good learnings tho).</p>
-<p>• Then i found this blog https://vk9-sec.com/advanced-sql-injection-union-based/</p>
+<p>• Then i found this blog <a href="https://vk9-sec.com/advanced-sql-injection-union-based/">https://vk9-sec.com/advanced-sql-injection-union-based/</a></p>
 
 ```
 From the blog: 
@@ -206,11 +206,11 @@ Query Used:
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/csp.png">
 
-<p>• My first go to is https://book.hacktricks.xyz/pentesting-web/content-security-policy-csp-bypass ; since i already read about googleapis CSP bypass.</p>
+<p>• My first go to is <a href="https://book.hacktricks.xyz/pentesting-web/content-security-policy-csp-bypass">https://book.hacktricks.xyz/pentesting-web/content-security-policy-csp-bypass</a> ; since i already read about googleapis CSP bypass.</p>
 
 <p>• But unfortunately the callback sites on the googleapis was down.</p>
 
-<p>• Then i found the working endpoint on https://brutelogic.com.br/blog/csp-bypass-guidelines/</p>
+<p>• Then i found the working endpoint on <a href="https://brutelogic.com.br/blog/csp-bypass-guidelines/">https://brutelogic.com.br/blog/csp-bypass-guidelines/</a></p>
 
 ```
 <Script Src=https://www.googleapis.com/customsearch/v1?callback=alert(document.domain)></Script>
