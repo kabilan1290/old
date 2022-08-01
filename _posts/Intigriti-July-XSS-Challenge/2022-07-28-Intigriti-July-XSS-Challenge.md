@@ -202,7 +202,7 @@ Query Used:
 <img src=1 onerror=alert(1)>  :  0x3c696d67207372633d31206f6e6572726f723d616c6572742831293e
 ```
 
-<p>• CSP :<p>
+<p>• CSP :</p>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/csp.png">
 
