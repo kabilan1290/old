@@ -5,7 +5,7 @@ date:   2022-07-28 09:29:20 +0700
 categories: ctfwriteup
 ---
 
-### Intigriti July xss challenge
+### Intigriti July xss challenge[Second order SQLI to XSS]
 
 - Hey all it been an really long time since i last posted something !
 
@@ -15,21 +15,21 @@ categories: ctfwriteup
 
 - Lets get into the challenge page and the challenge page seemed very blank ( no javascripts , no insertion points) at first thought!
 
-<img src="challengepage.png"></img>
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/challengepage.png"></img>
 
 - The only dynamic activity happened in the page was fetching blog archives via month parameter.
 
-<img src="dynamic.png"></img>
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/dynamic.png"></img>
 
 - Inserting any values or special characters throwed an error page and inserting any incremental numbers 4,5 throwed an blank page.
 
-<img src="error.png"></img> 
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/error.png"></img> 
 
 - hmmmm! maybe an sqlinjection? tried some logical payloads,Guess what? yesss sql injectionnnnn.
 
-<img src="fails.png">
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/fails.png">
 
-<img src="loads.png">
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/loads.png">
 
 - But what we do with sql injection in an xss challenge? ok lets check wether we can dump the database.
 
@@ -47,11 +47,11 @@ Noticed the reflection on 2,3,5 by union select clause
 
 - Can execute mysql functions,Checked with database(),user(),version() at first! and we are sitting on the 'blog' database.
 
-<img src="reflect.png">
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/reflect.png">
 
 - Dumping the table names of the database blog;
 
-<img src="tablename.png">
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/tablename.png">
 
 ```
 Query used : https://challenge-0722.intigriti.io/challenge/challenge.php?month=1%20union%20select%20null,group_concat(table_name),null,null,group_concat(table_name)%20from%20information_schema.tables%20where%20table_schema=database()--%20-#
@@ -59,7 +59,7 @@ Query used : https://challenge-0722.intigriti.io/challenge/challenge.php?month=1
 
 - We came to an understanding there are three tables "post,user,youtube"! Now onto dumping the columns and contents.
 
-<img src="whole.png">
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/whole.png">
 
 - The above is the structure "database > tables > column"
 
@@ -76,7 +76,7 @@ https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select
 
 - After spending some time on examining data from each column, nothing been found except i was rickrolled on youtubeid :| 
 
-<img src="rickroll.png">
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/rickroll.png">
 
 - It went on limelight that this challenge has nothing to do with data dump.
 
@@ -99,9 +99,9 @@ https://challenge-0722.intigriti.io/challenge/challenge.php?month=3 union select
 
 - Then i came across this lovely rendition,the author name which was never rendered in any of the reflection(output by our sqlinjection query) magically came up when i tried some fuzzing with integers( ah i completely forgot to notice this ;} the author name)
 
-<img src="kanom.png">
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/kanom.png">
 
-<img src="iruku.png">
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/iruku.png">
 
 - Then i founded that the 4th column is responsible for this behaviour.
 
@@ -175,7 +175,7 @@ But in case you cannot see any of these column printed then you can simply inval
 
 - It made sense , The only ouput i was able to get was author name,maybe invalidating that query will actually make the union select query works?lets try!!!
 
-<img src="2ref.png">
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/2ref.png">
 
 - yasssssssss ! we got reflection on the 2 column on user table!
 
@@ -189,7 +189,7 @@ Query used:
 
 - Then tried to check whether it has any special character escape and it did'nt had :0 
 
-<img src="xss.png">
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/xss.png">
 
 - We almost done the challenge, now the only part that is required is bypassing the csp !
 
@@ -202,7 +202,7 @@ Query Used:
 
 - CSP :
 
-<img src="csp.png">
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/csp.png">
 
 - My first go to is https://book.hacktricks.xyz/pentesting-web/content-security-policy-csp-bypass ; since i already read about googleapis CSP bypass.
 
@@ -226,6 +226,6 @@ https://challenge-0722.intigriti.io/challenge/challenge.php?month=3%20union%20se
 
 - Now pasting the url on the browser window !
 
-<img src="popup.png">
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/popup.png">
 
 - Thats really a cute popup ! shoutout to intigriti and vroemy for the awesome challenge!
