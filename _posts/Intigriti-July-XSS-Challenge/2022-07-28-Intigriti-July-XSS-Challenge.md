@@ -11,7 +11,7 @@ categories: ctfwriteup
 
 - Thankfully intigriti came up with an xss challenge for the month july and i solved it :D
 
-<img src="xsschallenge.png"></img>
+<img src="https://github.com/kabilan1290/kabilan1290.github.io/blob/master/assets/img/xsschallenge.png"></img>
 
 - Lets get into the challenge page and the challenge page seemed very blank ( no javascripts , no insertion points) at first thought!
 
