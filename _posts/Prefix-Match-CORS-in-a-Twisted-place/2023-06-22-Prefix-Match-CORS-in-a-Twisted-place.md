@@ -27,3 +27,18 @@ categories: bugbountywriteup
 - At first glance, the page source contains nothing after looking towards the js files and everything,i just noted down the domain and left it open.
 
 - <img src="https://github.com/kabilan1290/kabilan1290.github.io/assets/45006244/de1f3137-9527-4f27-8d94-657520b213d5"></img>
+
+- Some days passed and i opened the domain and looked at the source again and to my twist i was able to see my email address and CSRF token in javascript variables.
+  
+- But how could i missed that? seems i was not actually logged in to the target.com that time of searching.
+  
+- Even the customer and triage team did so.
+  
+- But finally i made a nice POC script to pull out the email address and CSRF token through the prefix match cors exploit.
+
+- And i was awaraded with a good bounty :D
+
+- Be sure to check prefix and suffix match CORS next time you are hunting!
+
+- Thank you for the read!
+- 
