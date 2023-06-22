@@ -5,7 +5,7 @@ layout: page
 excerpt: This is Game0v3r,playing CTF with TamilCTF and i do Part-time bugbounty!
 comments: false
 ---
-Kabilan S is an BE - Computer Science student from sri krishna college of engineering and technology.He is currently the part of TamilCTF team.His interests includes web exploitation and Cryptography.
+Kabilan S is an BE - Computer Science student from sri krishna college of engineering and technology.He is currently the part of TamilCTF team and working in ZOHO as Security analyst.His interests includes Web exploitation And Cryptography.
 
 
 <a href="https://www.youtube.com/watch?v=g5kMNQ3AQUs">If you want to know who you are, you have to look at your real self and acknowledge what you see.</a>
