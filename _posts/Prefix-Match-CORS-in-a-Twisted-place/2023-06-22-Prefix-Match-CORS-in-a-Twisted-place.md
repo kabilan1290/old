@@ -9,7 +9,7 @@ categories: bugbountywriteup
 
 - Most of the bughunters search for CORS by quickly changing the origin and check several other tricks but forgot about prefix and suffix match cors.
 
-- Prefix and Suffix match CORS?
+### Prefix and Suffix match CORS?
 
 - Lets take something.someone.com as a target.
 
