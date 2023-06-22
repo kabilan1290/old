@@ -4,7 +4,7 @@ title:  "Prefix Match CORS in a Twisted place"
 date:   2023-06-22 09:29:20 +0700
 categories: bugbountywriteup
 ---
-![image](https://media.tenor.com/EERR4LXoJBoAAAAd/hi-wave.gif)
+<img src="https://media.tenor.com/EERR4LXoJBoAAAAd/hi-wave.gif"></img>
 
 
 - Hola ! It's been really a long time since i posted anything btw i came up with a writeup showcasing a CORS exploit in a twisted place.
@@ -26,4 +26,4 @@ categories: bugbountywriteup
   
 - At first glance, the page source contains nothing after looking towards the js files and everything,i just noted down the domain and left it open.
 
-- ![image](https://github.com/kabilan1290/kabilan1290.github.io/assets/45006244/de1f3137-9527-4f27-8d94-657520b213d5)
+- <img src="https://github.com/kabilan1290/kabilan1290.github.io/assets/45006244/de1f3137-9527-4f27-8d94-657520b213d5"></img>
