@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Resume Review</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #file-input {
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #result-message, #error-message, #server-response {
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        #result-message {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        #error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        #server-response {
+            background-color: #f0f0f0;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Resume Review</h1>
+        <form id="upload-form">
+            <input type="file" id="file-input" accept=".pdf, .doc, .docx">
+            <button type="button" onclick="reviewResume()">Review Resume</button>
+        </form>
+        <div id="result-message"></div>
+        <div id="error-message"></div>
+        <div id="server-response"></div>
+    </div>
+
+    <script>
+        function reviewResume() {
+            const fileInput = document.getElementById('file-input');
+            const resultMessage = document.getElementById('result-message');
+            const errorMessage = document.getElementById('error-message');
+            const serverResponse = document.getElementById('server-response');
+
+            // Reset messages
+            resultMessage.textContent = '';
+            errorMessage.textContent = '';
+            serverResponse.textContent = '';
+
+            // Check if a file is selected
+            if (!fileInput.files.length) {
+                errorMessage.textContent = 'Please select a file.';
+                return;
+            }
+
+            const file = fileInput.files[0];
+
+            // Create FormData object and append the file
+            const formData = new FormData();
+            formData.append('file', file);
+
+            // Create XHR object
+            const xhr = new XMLHttpRequest();
+
+            // Define the endpoint URL
+            const endpointUrl = 'https://automated-resume-review.indeed.com/uploadFile';
+
+            // Setup the XHR request
+            xhr.open('POST', endpointUrl, true);
+
+            // Set custom headers
+            xhr.setRequestHeader('Authorization', 'Basic UHJvZmlsZU9uZVdlYmFwcEFwcGxpY2F0aW9uOjNmbGZpdjk5NmVwMHk2MXEzdXB3d2l5aWE=');
+            xhr.setRequestHeader('Indeed-Service', 'automated-resume-review');
+
+            // Set up a callback function to handle the response
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        // Successful response
+                        resultMessage.textContent = 'Resume reviewed successfully!';
+                    } else {
+                        // Error response
+                        errorMessage.textContent = 'Error reviewing the resume. Please try again.';
+                    }
+
+                    // Display the detailed response on the webpage
+                    serverResponse.textContent = 'Server Response: ' + xhr.responseText;
+                }
+            };
+
+            // Send the XHR request with the FormData
+            xhr.send(formData);
+        }
+    </script>
+</body>
+</html>
