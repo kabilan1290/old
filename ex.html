@@ -15,7 +15,28 @@
 <!--<iframe src="https://cliq.zohoniclabs.in/index.do?fromService=tamilctf&wpLibraryVersion=7b5a5496e4ef1712c60d&canAddOACHeader=true&frameorigin=https%3A%2F%2Fcoinmarketcap.com.tamilctf.com%.zoho.com" sandbox></iframe>
 -->
 
-<iframe src="https://books.zoho.com/widget?serviceOrigin=https://coinmarketcap.com.tamilctf.com/&frameorigin=https://coinmarketcap.com.tamilctf.com&from_source=zmail"><iframe>
+<iframe id="tester" src="https://books.zoho.com/widget?serviceOrigin=https://coinmarketcap.com.tamilctf.com/&frameorigin=https://coinmarketcap.com.tamilctf.com&from_source=zmail"></iframe>
+
+<script>
+  // Get a reference to the iframe
+var iframe = document.getElementById('tester');
+
+// Check if the iframe is loaded
+if (iframe.contentDocument && iframe.contentDocument.body) {
+    // Access the contentDocument and body of the iframe
+    var iframeContent = iframe.contentDocument.body.innerHTML;
+
+    // Now you can work with the content of the iframe
+    console.log(iframeContent);
+} else {
+    // If the iframe is not yet loaded, you can wait for the 'load' event
+    iframe.onload = function() {
+        var iframeContent = iframe.contentDocument.body.innerHTML;
+        console.log(iframeContent);
+    };
+}
+
+</script>
 
 <script>
 window.addEventListener('message', function(e)  {
