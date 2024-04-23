@@ -7,7 +7,7 @@ categories: ctfwriteup
 
 ### Challenge Name : Simple-SQLI
 
-- The challenge invloves solving a simple sqlite injection and the source code for the challenge is given below!
+<p>The challenge invloves solving a simple sqlite injection and the source code for the challenge is given below!
 
 ```
 #!/usr/bin/python3
@@ -73,12 +73,12 @@ def login():
 app.run(host='0.0.0.0', port=8000)
 ```
 
-- It easier to notice, our user input is directly appened to the sql query and we can simply craft a login bypass payload to solve this?
+<p>It easier to notice, our user input is directly appened to the sql query and we can simply craft a login bypass payload to solve this?
 
-- Using this in userid `admin" or 1=1 -- -` will help us login! Lets try...
+<p>Using this in userid `admin" or 1=1 -- -` will help us login! Lets try...
 
-- We are logged in as guest but we supplied userid as admin :0 , the catch here is `userid = res[0]` [ Seems like it checking the response of 0th row and in 0th row we are having the userid `guest`]
+<p>We are logged in as guest but we supplied userid as admin :0 , the catch here is `userid = res[0]` [ Seems like it checking the response of 0th row and in 0th row we are having the userid `guest`]
 
-- To bypass this we can use `LIMIT 1 OFFSET 1` -limits the result to 1 row (LIMIT 1), and skips the first row, effectively returning the second row (OFFSET 1).
+<p>To bypass this we can use `LIMIT 1 OFFSET 1` -limits the result to 1 row (LIMIT 1), and skips the first row, effectively returning the second row (OFFSET 1).
 
-- This will return the userid `admin` and we get the flag!
+<p>This will return the userid `admin` and we get the flag!
