@@ -7,7 +7,7 @@ categories: ctfwriteup
 
 ### Challenge Name : Simple-SQLI
 
-<p>The challenge invloves solving a simple sqlite injection and the source code for the challenge is given below!
+<p>The challenge invloves solving a simple sqlite injection and the source code for the challenge is given below!</p>
 
 ```
 #!/usr/bin/python3
