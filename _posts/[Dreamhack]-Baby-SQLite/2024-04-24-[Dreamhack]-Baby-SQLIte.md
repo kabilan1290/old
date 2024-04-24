@@ -94,7 +94,9 @@ if __name__ == '__main__':
 
 ```
 
-Potential SQLite injection but <code>sqli_filter = ['[', ']', ',', 'admin', 'select', '\'', '"', '\t', '\n', '\r', '\x08', '\x09', '\x00', '\x0b', '\x0d', ' ']</code> need to bypass these filters. [ Does not sound like a baby SQLite injection]
+Potential SQLite injection but <code>sqli_filter = ['[', ']', ',', 'admin', 'select', '\'', '"', '\t', '\n', '\r', '\x08', 
+
+'\x09', '\x00', '\x0b', '\x0d', ' ']</code> need to bypass these filters. [ Does not sound like a baby SQLite injection]
 
 All the parameters are lower cased which means we cant bypass with <code>SeLect - select</code>[SQLi is case insensitive]
 
@@ -113,3 +115,13 @@ The SQL database is getting deleted when the python script starts and also there
 ```
 
 To get the flag we just need our injection to return the value admin and that value is checked not the original uid.
+
+So i thought of using the payload <code>`union value`</code> to return the value we are giving.
+
+We cant use `admin` directly, i thought of using char() function with ascii values of `admin` , here we cant use concat function like `concat(char(97),char(100),char(109),char(105),char(110))` since `,` is also blocked.
+
+So our final payload depends on the use of concatenation operator `||`
+
+Using all these [ Space bypass , union value , char() , || ] we get the payload <code>`level=1/**/union/**/values(char(97)||char(100)||char(109)||char(105)||char(110))`</code> and this gives us the flag.
+
+
