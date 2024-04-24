@@ -122,6 +122,6 @@ We cant use `admin` directly, i thought of using char() function with ascii valu
 
 So our final payload depends on the use of concatenation operator <code>`||`</code>
 
-<p>Using all these [ Space bypass , union value , char() , || ] we get the payload <code>`level=1/**/union/**/values(char(97)||char(100)||char(109)||char(105)||char(110))`</code> and this gives us the flag.
+<p>Using all these [ Space bypass , union values() , char() , || ] we get the payload <code>`level=1/**/union/**/values(char(97)||char(100)||char(109)||char(105)||char(110))`</code> and this will return the query result as admin and gives us the flag.
 
 
