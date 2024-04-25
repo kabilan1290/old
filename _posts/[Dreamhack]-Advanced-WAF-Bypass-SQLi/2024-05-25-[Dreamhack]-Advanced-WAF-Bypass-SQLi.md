@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Dreamhack]Advanced WAF Bypass SQLI"
-date:   2024-05-24 00:29:20 +0700
+date:   2024-05-25 00:29:20 +0700
 categories: ctfwriteup
 ---
 
