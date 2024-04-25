@@ -8,7 +8,8 @@ categories: ctfwriteup
 ### Challenge Name : Baby SQLite
 
 The challenge source code is below
-
+<img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/babysqlite.png">
+<br>
 ```
 #!/usr/bin/env python3
 from flask import Flask, request, render_template, make_response, redirect, url_for, session, g
