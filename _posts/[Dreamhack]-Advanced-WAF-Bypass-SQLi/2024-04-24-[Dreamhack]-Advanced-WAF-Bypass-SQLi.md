@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  "[Dreamhack]Advanced WAF Bypass SQLI"
-date:   2024-04-24 00:29:20 +0700
+date:   2024-04-25 00:29:20 +0700
 categories: ctfwriteup
 ---
 
 ### Challenge Name : Advanced WAF Bypass SQLi
 
-Th challenge source code is given below
+<p>• The challenge source code is given below</p>
 
 ```
 import os
@@ -62,27 +62,27 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0')
 ```
 
-This challenge is advanced version of the previous challenge <code>`WAF bypass SQLI`</code>,The user input here is lower casted before checking into the check_WAF function.
+<p>• This challenge is advanced version of the previous challenge <code>`WAF bypass SQLI`</code>,The user input here is lower casted before checking into the check_WAF function.</p>
 
-At first i tried basic concatenation [OR Operator] and it worked with <code>`'||1=1#` `'||1=0#`</code>
-
-<img>
-
-Then i tried with <code>`'||length(upw)={length}#`</code> , i got success in calculating the length, like if the length is valid,the server will respond the uid but it seems if founded the upw of abcde which is a different user.
-
-Then started struggling with the idea of how to supply the admin uid, meanwhile i understood the exploitation part will require blind injection.
-
-The idea came in to use the [AND operator] && <code>`'||(uid='guest'&&length(upw)=5)#`</code>
-
-It worked and the responded with the uid guest.
+<p>• At first i tried basic concatenation [OR Operator] and it worked with <code>`'||1=1#` `'||1=0#`</code></p>
 
 <img>
 
-Now we can use concat function to supply admin value in uid <code>`concat('adm','in)`</code>, We also know that the flag value is stored in admin upw and starts with 'D' since the flag format is 'DH{.*}'.
+<p>• Then i tried with <code>`'||length(upw)={length}#`</code> , i got success in calculating the length, like if the length is valid,the server will respond the uid but it seems if founded the upw of abcde which is a different user.</p>
 
-I supplied the payload <code>`'||(uid=concat('adm','in')&&substr(upw,1,1)='D')#` and yesss! we recieved the response uid as admin which means we succceded!
+<p>• Then started struggling with the idea of how to supply the admin uid, meanwhile i understood the exploitation part will require blind injection.</p>
 
-Now our idea is to  find the length of upw and below is the script i created that will help us to find the length!
+<p>• The idea came in to use the [AND operator] && <code>`'||(uid='guest'&&length(upw)=5)#`</code></p>
+
+<p>• It worked and the responded with the uid guest.</p>
+
+<img>
+
+<p>• Now we can use concat function to supply admin value in uid <code>`concat('adm','in)`</code>, We also know that the flag value is stored in admin upw and starts with 'D' since the flag format is 'DH{.*}'.</p>
+
+<p>• I supplied the payload <code>`'||(uid=concat('adm','in')&&substr(upw,1,1)='D')#` and yesss! we recieved the response uid as admin which means we succceded!</p>
+
+<p>• Now our idea is to  find the length of upw and below is the script i created that will help us to find the length!</p>
 
 
 
@@ -109,7 +109,7 @@ while True:
 print(f"Admin upw length is {length}")
 ```
 
-The length of upw is 44 and now we can bruteforce each character and find the flag.
+<p>• The length of upw is 44 and now we can bruteforce each character and find the flag.</p>
 
 ```
 import requests
