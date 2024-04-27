@@ -66,7 +66,7 @@ if __name__ == '__main__':
 
 • At first i tried basic concatenation [OR Operator] and it worked with <code>`'||1=1#` `'||1=0#`</code>
 
-<img>
+<img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/work.png">
 
 • Then i tried with <code>`'||length(upw)={length}#`</code> , i got success in calculating the length, like if the length is valid,the server will respond the uid but it seems if founded the upw of abcde which is a different user.
 
@@ -76,7 +76,7 @@ if __name__ == '__main__':
 
 • It worked and the responded with the uid guest.
 
-<img>
+<img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/length.png">
 
 • Now we can use concat function to supply admin value in uid <code>`concat('adm','in)`</code>, We also know that the flag value is stored in admin upw and starts with 'D' since the flag format is 'DH{.*}'.
 
@@ -108,6 +108,8 @@ while True:
 
 print(f"Admin upw length is {length}")
 ```
+<img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/length_script.png">
+
 
 • The length of upw is 44 and now we can bruteforce each character and find the flag.
 
@@ -135,3 +137,5 @@ for i in range(0,45):
 
 print(f"Flag : {flag}")
 ```
+
+<img src="https://raw.githubusercontent.com/kabilan1290/kabilan1290.github.io/master/assets/img/adv_flag.png">
