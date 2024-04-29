@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "[THJCC]SQLi Auth bypass 🦊🌽"
+title:  "[THJCC]SQLi Auth bypass"
 date:   2024-04-29 00:29:20 +0700
 categories: ctfwriteup
 ---
 
-### Challenge Name : SQLi Auth bypass 🦊🌽
+### Challenge Name : SQLi Auth bypass 
 
 <img>
 
@@ -48,7 +48,7 @@ def auth(content):
     except: return None 
 def guestGive():
     res = make_response(redirect("/"))
-    res.set_cookie("role", base64.b64encode("guest@?*&-</;<$)~~/%.!}{/\){%~:<!)-#%](]$-%(}]]_&|.}_-;#`^<&%&]>`~*~(^>+,}/#*&&:&|#|&{]#/#%^.;%-^%}$])<[\:)~[>\~{#^[/?;`#`))}^]\*;_/,<".encode()).decode(encoding="utf8"))
+    res.set_cookie("role", base64.b64encode("guest@?*&*@&*#&".encode()).decode(encoding="utf8"))
     return res
 ```
 
