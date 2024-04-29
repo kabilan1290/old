@@ -108,11 +108,10 @@ if __name__ == "__main__": app.run("0.0.0.0", PORT, debug=False)
 • We can bypass the password field by supplying <code>` ')||1-- `</code> and changing the username to admin.
 
 Breakdown:
-
-') - we are closing the password query properly
-|| - using OR operator
-1 - 1 which will always result in true
--- - commenting out the reamining query
+• <code>`')`</code> - we are closing the password query properly
+• <code>`||`</code> - using OR operator
+•<code>`1`</code> - 1 which will always result in true
+• <code>`--`</code> - commenting out the reamining query
 
 • Final base64 cookie <code>`YWRtaW5APyomLTwvOzwkKX5+LyUuIX17L1wpeyV+OjwhKS0jJV0oXSQtJSh9XV1fJnwufV8tOyNgXjwmJSZdPmB+Kn4oXj4rLH0vIyomJjomfCN8JntdIy8jJV4uOyUtXiV9JF0pPFtcOil+Wz5cfnsjXlsvPztgI2ApKX1eXVwqO18vLDwnKXx8MS0t`</code>
 
