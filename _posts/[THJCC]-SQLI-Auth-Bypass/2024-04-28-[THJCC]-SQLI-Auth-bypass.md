@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[THJCC]SQLi Auth bypass"
-date:   2024-04-29 00:29:20 +0700
+date:   2024-04-28 00:29:20 +0700
 categories: ctfwriteup
 ---
 
