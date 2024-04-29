@@ -1,0 +1,22 @@
+---
+import type {HTMLAttributes} from 'astro/types';
+import {Button} from '@koibumi-design/solidjs';
+
+type Props = HTMLAttributes<'a'>;
+
+const {href, class: className} = Astro.props;
+
+const {pathname} = Astro.url;
+const subpath = pathname.match(/[^\/]+/g);
+const isActive = href === pathname || href === '/' + subpath?.[0];
+---
+
+<Button
+        variant={isActive ? 'solid' : 'light'}
+        as="link"
+        href={href?.toString()}
+        target='_self'
+        class={className ?? ''}
+>
+    <slot/>
+</Button>
